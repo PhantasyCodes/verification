@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: verification
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+mpesa:
+  sandbox:
+    url: https://sandbox.safaricom.co.ke/mpesa/b2c/v3/paymentrequest
+    accessTokenUrl: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+  initiator:
+    name: testapi
+    password: Safaricom999!*!
+  security:
+    credential: WV8WucYiW6vyZnkcFFUMZdob5KZ3YhAESeq2rw9MPa3H81KtQRNfhYUbvuVPdYBqTKFr3yK3WI+9AUQ8qJwVKoFC9rtn6wqvV3Z1itz4yQmYoT9XX8L/IF94/637yfGjqsAAFBZY1YVdkee7P9qikfFXSePEY8BZEQ8fV2IKZeOteNNBWzE3PWeM52FlR3Ml+ELoDqCPHylGP6DQqVKrLMFN+uRzWILXEfoyiAQ00Z0vmrHp+pcvbcKgnPwWX7jLirioN7fRc21e/RlBeHibAK69yY2P8E9+FcOS7Xhw4iYhWJwprBnwfIM7fP2MdBrwAxPTX6Lil4PqJbM+v3HrRQ==
+    consumerKey: qhkP5Qj2bIBiMMG8A6gycMn5529GnEIHhiCHvYC5SSfHeTiD
+    consumerSecret: OB6avAAVpxUlmb7Ay1n1vCLy1JRZc8zqXsHQjbNAbHZgMORMvtJH0uFFjGpyEEWW
+server:
+  port: 8443
+  ssl:
+    key-store: classpath:keystore.p12
+    key-store-password: D@v1dK1ng
+    keyStoreType: PKCS12
+    keyAlias: myapp
+
