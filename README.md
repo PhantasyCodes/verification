@@ -1,6 +1,4 @@
-<h1 align="center">Mpesa Verification<img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="40"></h1>
-
-<p align="center"><img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDlzaWZ2dHl0bGY0OGxlMmJzZXNwY2Q4eG51MjI5MDdubXhhczg3cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/67ThRZlYBvibtdF9JH/giphy.gif" width="600" height="300"  /></p>
+<h1 align="center">Mpesa Verification<img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDlzaWZ2dHl0bGY0OGxlMmJzZXNwY2Q4eG51MjI5MDdubXhhczg3cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/67ThRZlYBvibtdF9JH/giphy.gif" width="40"></h1>
 
 ### :woman_technologist: &nbsp;About Me :
 
