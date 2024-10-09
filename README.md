@@ -1,7 +1,9 @@
 <h1 align="center">Mpesa Verification</h1>
 
 ### :woman_technologist: &nbsp;About The Program :
-
+<p>
+This program is meant to verify users given their M-Pesa number and ID.
+</p>
 ---
 
 ### 🛠 &nbsp;Languages and Tools :
