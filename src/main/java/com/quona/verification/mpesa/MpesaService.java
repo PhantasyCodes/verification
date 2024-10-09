@@ -66,7 +66,7 @@ public class MpesaService {
         System.out.println("Access token: " + accessToken);
         System.out.println(partyB);
 
-        String requestBody = String.format("{\"InitiatorName\": \"%s\", \"OriginatorConversationID\": \"e0391b70-2c3c-4dc6-92c2-73b183bbb40a\", \"SecurityCredential\": \"%s\", \"CommandID\": \"BusinessPayment\", \"Amount\": \"10\", \"PartyA\": \"600996\", \"PartyB\": \"%s\", \"IDType\": \"01\", \"IDNumber\": \"%s\", \"Remarks\": \"None\", \"QueueTimeOutURL\": \"https://safaricomsacco.com\", \"ResultURL\": \"https://safaricomsacco.com\",  \"Occasion\": \"\"}",
+        String requestBody = String.format("{\"InitiatorName\": \"%s\", \"OriginatorConversationID\": \"e0391v70-5c3c-4dc6-92c2-73b183bbb40a\", \"SecurityCredential\": \"%s\", \"CommandID\": \"BusinessPayment\", \"Amount\": \"10\", \"PartyA\": \"600996\", \"PartyB\": \"%s\", \"IDType\": \"01\", \"IDNumber\": \"%s\", \"Remarks\": \"None\", \"QueueTimeOutURL\": \"https://safaricomsacco.com\", \"ResultURL\": \"https://safaricomsacco.com\",  \"Occasion\": \"\"}",
                 initiatorName, credential, partyB, idNumber);
 
         HttpHeaders headers = new HttpHeaders();

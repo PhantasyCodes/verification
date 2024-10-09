@@ -5,7 +5,7 @@ spring:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 mpesa:
   sandbox:
-    url: https://sandbox.safaricom.co.ke/mpesa/b2c/v3/paymentrequest
+    url: https://sandbox.safaricom.co.ke/mpesa/b2cvalidate/v2/paymentrequest
     accessTokenUrl: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
   initiator:
     name: testapi
