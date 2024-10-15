@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 import java.util.Base64;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -32,7 +33,7 @@ public class MpesaService {
 
     private final RestTemplate restTemplate;
 
-    public String generateAccessToken() {
+    private String generateAccessToken() {
         String credentials = consumerKey + ":" + consumerSecret;
         String encodedCredentials = Base64.getEncoder().encodeToString(credentials.getBytes());
 
@@ -61,16 +62,20 @@ public class MpesaService {
         }
     }
 
+    private String generateUniqueConversationId() {
+        return UUID.randomUUID().toString();
+    }
+
     public ResponseEntity<String> validatePayment(String partyB, String idNumber) {
         String accessToken = generateAccessToken();
-        System.out.println("Access token: " + accessToken);
-        System.out.println(partyB);
+        String uniqueConversationId = generateUniqueConversationId();
 
-        String requestBody = String.format("{\"InitiatorName\": \"%s\", \"OriginatorConversationID\": \"e0391v70-5c3c-4dc6-92c2-73b183bbb40a\", \"SecurityCredential\": \"%s\", \"CommandID\": \"BusinessPayment\", \"Amount\": \"10\", \"PartyA\": \"600996\", \"PartyB\": \"%s\", \"IDType\": \"01\", \"IDNumber\": \"%s\", \"Remarks\": \"None\", \"QueueTimeOutURL\": \"https://safaricomsacco.com\", \"ResultURL\": \"https://safaricomsacco.com\",  \"Occasion\": \"\"}",
-                initiatorName, credential, partyB, idNumber);
+        String requestBody = String.format("{\"InitiatorName\": \"%s\", \"OriginatorConversationID\": \"%s\", \"SecurityCredential\": \"%s\", \"CommandID\": \"BusinessPayment\", \"Amount\": \"10\", \"PartyA\": \"600996\", \"PartyB\": \"%s\", \"IDType\": \"01\", \"IDNumber\": \"%s\", \"Remarks\": \"None\", \"QueueTimeOutURL\": \"https://safaricomsacco.com\", \"ResultURL\": \"https://safaricomsacco.com\",  \"Occasion\": \"\"}",
+                initiatorName, uniqueConversationId, credential, partyB, idNumber);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
+        assert accessToken != null;
         headers.setBearerAuth(accessToken);
 
         HttpEntity<String> request = new HttpEntity<>(requestBody, headers);
